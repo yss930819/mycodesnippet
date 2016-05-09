@@ -6,17 +6,18 @@ from django.db import models
 
 # Create your models here.
 
+
 class Page(models.Model):
     """
     页面表单
 
     表单页
-    pagename 页面名
+    page_name 页面名
     """
     page_name = models.CharField(max_length=10)
 
     def __unicode__(self):
-        return u"%s" % self.pagename
+        return u"%s" % self.page_name
 
 
 class PageInfo(models.Model):
@@ -26,6 +27,9 @@ class PageInfo(models.Model):
 
     """
     page = models.ForeignKey(Page)
-    taxi_num = models.CharField(max_length=10, unique=True)
+    taxi_num = models.CharField(max_length=10)
     fee = models.FloatField()
     change_time = models.DateTimeField(auto_now=True)
+
+    def __unicode__(self):
+        return u"%s,%d" % (self.taxi_num, self.page_id)
