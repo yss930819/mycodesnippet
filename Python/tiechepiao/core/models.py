@@ -15,8 +15,12 @@ class Page(models.Model):
     page_name 页面名
     """
     page_name = models.CharField(max_length=10)
+    fees = models.FloatField()
 
     def __unicode__(self):
+        return u"%s" % self.page_name
+        
+    def __str__(self):
         return u"%s" % self.page_name
 
 
@@ -26,10 +30,15 @@ class PageInfo(models.Model):
 
 
     """
+    
     page = models.ForeignKey(Page)
     taxi_num = models.CharField(max_length=10)
     fee = models.FloatField()
     change_time = models.DateTimeField(auto_now=True)
 
     def __unicode__(self):
+        return u"%s,%d" % (self.taxi_num, self.page_id)
+    
+    
+    def __str__(self):
         return u"%s,%d" % (self.taxi_num, self.page_id)

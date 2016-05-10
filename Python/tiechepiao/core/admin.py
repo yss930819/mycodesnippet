@@ -16,7 +16,7 @@ class PageAdmin(admin.ModelAdmin):
     """
     自定义Page管理页面
     """
-    list_display = ['page_name']
+    list_display = ['page_name','fees']
 
 
 class PageInfoAdmin(admin.ModelAdmin):
