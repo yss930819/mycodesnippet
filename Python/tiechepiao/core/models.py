@@ -16,6 +16,7 @@ class Page(models.Model):
     """
     page_name = models.CharField(max_length=10)
     fees = models.FloatField()
+    total = models.IntegerField()
 
     def __unicode__(self):
         return u"%s" % self.page_name

@@ -39,7 +39,7 @@ def SavePage(page_name):
     """
     ret = 0
     try:
-        page = Page(page_name=page_name, fees=0.0)
+        page = Page(page_name=page_name, fees=0.0 ,total=0)
         page.save()
         print("Page:%s创建成功" % page.page_name)
         ret = 1
@@ -57,9 +57,10 @@ def SavePageInfo(page, taxi_num, fee):
         try:
             page_info = PageInfo(page=page, taxi_num=taxi_num, fee=fee)
             page.fees = page.fees + float(fee)
+            page.total = page.total + 1
             page.save()
             page_info.save()
-            print("fees:%.2f  num:%s  fee：%s" % (page.fees,page_info.taxi_num,page_info.fee))
+            print("fees:%.2f total:%d  num:%s  fee：%s" % (page.fees,page.total,page_info.taxi_num,page_info.fee))
             ret = 1
         except Exception as error:
             print(error)
@@ -102,7 +103,7 @@ def addPageInfos(page):
 def DisplayPages():
     ps = GetAllPage()
     for p in ps:
-        print(p.page_name, ":", p.fees)
+        print(p.page_name, ":", p.fees,":" ,p.total)
     return 1            
             
 def menu():
