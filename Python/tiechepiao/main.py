@@ -104,7 +104,24 @@ def DisplayPages():
     ps = GetAllPage()
     for p in ps:
         print(p.page_name, ":", p.fees,":" ,p.total)
-    return 1            
+    return 1
+    
+def Total():
+    """
+    全部的钱！！！
+    和全部车票数
+    """
+    
+    ps = GetAllPage()
+    sum = 0.0
+    sum_piao = 0
+    for p in ps:
+        sum = sum + p.fees
+        sum_piao = sum_piao + p.total
+    print(sum)
+    print(sum_piao)
+    return 1
+          
             
 def menu():
     while True:
@@ -121,6 +138,9 @@ def menu():
                 print("已存在！！")
         elif args[0] == "add":
             addPageInfos(GetPage(args[1])[0])
+            
+        elif args[0] == "total":
+            Total()
         else:
             print("错误的参数：%s" % args[0])
             
