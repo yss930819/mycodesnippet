@@ -1,43 +1,18 @@
 # -*- coding: utf-8 -*-
-'''
-Created on 2014-6-17
+import top.api
+import urllib2
 
-@author: lijie.ma
-'''
-import aliyun.api
+req = top.api.AlibabaAliqinFcSmsNumSendRequest("http://gw.api.taobao.com/router/rest")
+req.set_app_info(top.appinfo("23383389","b6c0fab4a72c545da04155966faf0221"))
 
+req.extend="123456"
+req.sms_type="normal"
+req.sms_free_sign_name="测试签名"
+req.sms_param="{\"code\":\"1234\",\"product\":\"pride1952\"}"
+req.rec_num="13051806577"
+req.sms_template_code="SMS_10391034"
 
-'''
-这边可以设置一个默认的accessKeyId和accessKeySecret，当然也可以不设置
-注意：默认的只需要设置一次就可以了
-
-'''
-aliyun.setDefaultAppInfo("accessKeyId", "accessKeySecret")
-
-'''
-使用自定义的域名和端口（测试沙箱环境使用）
-a = aliyun.api.Rds20130528DescribeDBInstancesRequest("rds.aliyuncs.com",80)
-
-使用自定义的域名（测试沙箱环境使用）
-a = aliyun.api.Rds20130528DescribeDBInstancesRequest("rds.aliyuncs.com")
-
-使用默认的配置（调用线上环境）
-a = aliyun.api.Rds20130528DescribeDBInstancesRequest()
-
-'''
-
-a = aliyun.api.Rds20130528DescribeDBInstancesRequest()
-
-'''
-可以在运行期替换掉默认的appkey和secret的设置
-a.set_app_info(aliyun.appinfo("accessKeyId","accessKeySecret"))
-'''
-a.DBInstanceId = ""
-
-try:
-    print("begin");
-    f= a.getResponse()
-    print(f)
-except Exception,e:
-    print(e)
-    
+temp = req.getResponse()
+sock = urllib2.urlopen(url="http://gw.api.taobao.com"+temp["url"], data=temp["body"])
+doc = sock.readlines()
+print doc

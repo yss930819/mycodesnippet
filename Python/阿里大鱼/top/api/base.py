@@ -230,7 +230,7 @@ class RestApi(object):
         sign_parameter = sys_parameters.copy()
         sign_parameter.update(application_parameter)
         sys_parameters[P_SIGN] = sign(self.__secret, sign_parameter)
-        connection.connect()
+        # connection.connect()
         
         header = self.get_request_header();
         if(self.getMultipartParas()):
@@ -247,26 +247,11 @@ class RestApi(object):
             body = urllib.urlencode(application_parameter)
             
         url = N_REST + "?" + urllib.urlencode(sys_parameters)
-        connection.request(self.__httpmethod, url, body=body, headers=header)
-        response = connection.getresponse();
-        if response.status is not 200:
-            raise RequestException('invalid http status ' + str(response.status) + ',detail body:' + response.read())
-        result = response.read()
-        jsonobj = json.loads(result)
-        if jsonobj.has_key("error_response"):
-            error = TopException()
-            if jsonobj["error_response"].has_key(P_CODE) :
-                error.errorcode = jsonobj["error_response"][P_CODE]
-            if jsonobj["error_response"].has_key(P_MSG) :
-                error.message = jsonobj["error_response"][P_MSG]
-            if jsonobj["error_response"].has_key(P_SUB_CODE) :
-                error.subcode = jsonobj["error_response"][P_SUB_CODE]
-            if jsonobj["error_response"].has_key(P_SUB_MSG) :
-                error.submsg = jsonobj["error_response"][P_SUB_MSG]
-            error.application_host = response.getheader("Application-Host", "")
-            error.service_host = response.getheader("Location-Host", "")
-            raise error
-        return jsonobj
+        return {
+            "url":url,
+            "body":body
+        }
+
     
     
     def getApplicationParameters(self):
