@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?><alibaba_aliqin_fc_sms_num_send_response>
+<result>
+<err_code>0</err_code>
+<model>101836045866^1102405889820</model>
+<success>true</success>
+</result>
+<request_id>z2aro752vtx5</request_id>
+</alibaba_aliqin_fc_sms_num_send_response><!--top010178001139.n.et2-->
+
+Element: <DOM Element: alibaba_aliqin_fc_sms_num_send_response at 0x3697918>
+
+<?xml version="1.0" encoding="utf-8" ?>
+<error_response>
+<code>15</code>
+<msg>Remote service error</msg>
+<sub_code>isv.SMS_TEMPLATE_ILLEGAL</sub_code>
+<sub_msg>短信模板不合法</sub_msg>
+<request_id>13ozvmzqg9h3m</request_id>
+</error_response><!--top010179016052.n.et2-->
