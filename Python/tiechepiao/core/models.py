@@ -43,3 +43,10 @@ class PageInfo(models.Model):
     
     def __str__(self):
         return u"%s,%d" % (self.taxi_num, self.page_id)
+		
+		
+class Test(models.Model):
+    name = models.CharField(max_length=10)
+
+    class Meta:
+        db_table = "test"

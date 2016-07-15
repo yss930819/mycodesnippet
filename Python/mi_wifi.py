@@ -32,7 +32,6 @@ reload(sys)
 sys.setdefaultencoding('utf8')
 
 
-
 # *******************************
 # 要使用的常量
 # ********************************
@@ -47,7 +46,7 @@ url_002 = "http://miwifi.com/cgi-bin/luci/;stok=ea73835ba5723ba6e03a818bdc476ce3
 # ********************************
 
 
-def url_post_webserver(url, post_data , code='utf-8'):
+def url_post_webserver(url, post_data, code='utf-8'):
     """
     进行post请求，相对于webserver
     对返回情况也有处理
