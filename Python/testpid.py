@@ -1,5 +1,7 @@
+# -*-coding:utf8
 import time
 
-while(1):
-    print "hello"
-    time.sleep(10)
+name = input("input:\n")
+print name
+aa = raw_input("input:\n")
+print name,aa
