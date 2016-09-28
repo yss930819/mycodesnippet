@@ -1,0 +1,6 @@
+D:\document\Program\mycodesnippet\C#\ketitest\ketitest\ketitest\bin\Debug\ketitest.exe.config
+D:\document\Program\mycodesnippet\C#\ketitest\ketitest\ketitest\bin\Debug\ketitest.exe
+D:\document\Program\mycodesnippet\C#\ketitest\ketitest\ketitest\bin\Debug\ketitest.pdb
+D:\document\Program\mycodesnippet\C#\ketitest\ketitest\ketitest\obj\Debug\ketitest.csprojResolveAssemblyReference.cache
+D:\document\Program\mycodesnippet\C#\ketitest\ketitest\ketitest\obj\Debug\ketitest.exe
+D:\document\Program\mycodesnippet\C#\ketitest\ketitest\ketitest\obj\Debug\ketitest.pdb
