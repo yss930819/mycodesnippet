@@ -61,30 +61,6 @@
               </li>
             </ul>
           </li>
-
-
-
-          <li><a href="/contest/">Contest</a></li>
-
-
-
-          <li id="coursesNav"><a href="/courses/">Courses</a></li>
-
-          <li id="articlesNav"><a href="/articles/">Articles</a></li>
-          <!-- TODO: not hard code -->
-
-          <li id=""><a href="https://discuss.leetcode.com" target="_blank">Discuss</a></li>
-
-
-          <li id="bookNav" class="hidden-sm">
-            <a onclick="ga('send', 'event', 'book', 'click', 'nav-bar');" href="/book/">
-              <font color="#ed9c28">Book</font>
-            </a>
-          </li>
-
-
-
-
         </ul>
 
         <div class="navbar-form navbar-right">
