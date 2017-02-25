@@ -9,7 +9,7 @@ module.exports = {
     module: { //在配置文件里添加JSON loader
         loaders: [{
             test: /\.json$/,
-            loader: "json"
+            loader: "json-loader"
         }]
     },
 
