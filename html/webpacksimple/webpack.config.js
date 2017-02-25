@@ -11,22 +11,25 @@ module.exports = {
                 test: /\.json$/,
                 loader: "json-loader"
             },
-            {//配置使用babel
+            { //配置使用babel
                 test: /\.js$/,
                 exclude: /node_modules/,
                 loader: 'babel-loader', //在webpack的module部分的loaders里进行配置即可
                 query: {
                     presets: ['es2015', 'react']
                 }
+            },
+            {
+                test: /\.css$/,
+                loader: 'style-loader!css-loader' //添加对样式表的处理
             }
         ]
     },
 
     devServer: {
         contentBase: "./public", //本地服务器所加载的页面所在的目录
-        colors: true, //终端中输出结果为彩色
+        compress: true, 
         historyApiFallback: true, //不跳转
-        inline: true, //实时刷新
         port: 9000,
     }
 }
